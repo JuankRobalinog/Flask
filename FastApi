@@ -1,0 +1,17 @@
+#Practica Fast API
+
+from fastapi import FastAPI     #Importamos Fast Api desde la libreria
+
+app = FastAPI()         #Declaramos la instancia FastApi
+
+@app.get("/")
+def read_root():                        #Definimos la ruta que va a utilizar
+    return {"message": "Hola Mundo, bienvenido a la materia Desarrollo de Sistemas de Información"}    #Escribimos el mensaje que vamos a proyectar
+
+if __name__ == "__main__":      #Uvicorn nos ayuda a que el servidor se ejecute directamente con esta sentencia
+    import uvicorn                  
+    uvicorn.run(app, host="127.0.0.1", port=2023) #Definimos el puerto que vamos a utilizar
+
+
+
+
